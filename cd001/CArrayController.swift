@@ -79,7 +79,7 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             4.0,
             target: self,
-            selector: "pollGithubApi",
+            selector: "requestGithubPullRequests",
             userInfo: nil,
             repeats: true
         )
@@ -93,13 +93,13 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
         return self
     }
     
-    func pollGithubApi() {
+    func requestGithubPullRequests() {
         let reposOwner: String = managedObject.valueForKey("reposOwner") as String
         let reposName: String = managedObject.valueForKey("reposName") as String
         let githubUserName: String = managedObject.valueForKey("githubUserName") as String
         let githubUserToken: String = managedObject.valueForKey("githubUserToken") as String
         
-        let url = NSURL(string: "https://api.github.com/repos/\(reposOwner)/\(reposName)")
+        let url = NSURL(string: "https://api.github.com/repos/\(reposOwner)/\(reposName)/pulls")
         
         let request: NSMutableURLRequest = NSMutableURLRequest(
             URL: url!,
@@ -118,10 +118,10 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
         NSURLConnection.sendAsynchronousRequest(
             request,
             queue: NSOperationQueue.mainQueue(),//処理が途中で消えないようにメインスレッドに委譲
-            completionHandler: self.fetchResponse)
+            completionHandler: self.fetchPullRequests)
     }
     
-    func fetchResponse(res: NSURLResponse!, data: NSData!, error: NSError!) {
+    func fetchPullRequests(res: NSURLResponse!, data: NSData!, error: NSError!) {
         if error != nil {
             println(error)
             println(res)
@@ -130,11 +130,11 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
         
         // responseをjsonに変換
         var jError: NSErrorPointer = nil
-        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(
+        var json: NSArray = NSJSONSerialization.JSONObjectWithData(
             data,
             options: nil,
             error: jError
-        ) as NSDictionary
+        ) as NSArray
         
         if jError != nil {
             println(jError)
@@ -142,6 +142,6 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
             return
         }
         
-        println(json.valueForKey("clone_url"))
+        println(json)
     }
 }
