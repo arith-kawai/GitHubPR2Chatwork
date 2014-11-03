@@ -13,6 +13,10 @@
 		0B39E6B61A076A2F00BC3077 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B39E6B51A076A2F00BC3077 /* Images.xcassets */; };
 		0B39E6B91A076A2F00BC3077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B39E6B71A076A2F00BC3077 /* Main.storyboard */; };
 		0B39E6C51A076A2F00BC3077 /* cd001Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B39E6C41A076A2F00BC3077 /* cd001Tests.swift */; };
+		0BDCC5671A07B2B9006B8ADD /* CArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDCC5661A07B2B9006B8ADD /* CArrayController.swift */; };
+		0BDCC5681A07B2B9006B8ADD /* CArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDCC5661A07B2B9006B8ADD /* CArrayController.swift */; };
+		0BDCC56A1A07B81C006B8ADD /* APILog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDCC5691A07B81C006B8ADD /* APILog.swift */; };
+		0BDCC56B1A07B81C006B8ADD /* APILog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDCC5691A07B81C006B8ADD /* APILog.swift */; };
 		0BEFE2571A07803E00E779A7 /* CTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEFE2561A07803E00E779A7 /* CTableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,8 @@
 		0B39E6BE1A076A2F00BC3077 /* cd001Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cd001Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B39E6C31A076A2F00BC3077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B39E6C41A076A2F00BC3077 /* cd001Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cd001Tests.swift; sourceTree = "<group>"; };
+		0BDCC5661A07B2B9006B8ADD /* CArrayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CArrayController.swift; sourceTree = "<group>"; };
+		0BDCC5691A07B81C006B8ADD /* APILog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILog.swift; sourceTree = "<group>"; };
 		0BEFE2561A07803E00E779A7 /* CTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +92,8 @@
 				0B39E6B21A076A2F00BC3077 /* cd001.xcdatamodeld */,
 				0B39E6AC1A076A2F00BC3077 /* Supporting Files */,
 				0BEFE2561A07803E00E779A7 /* CTableView.swift */,
+				0BDCC5661A07B2B9006B8ADD /* CArrayController.swift */,
+				0BDCC5691A07B81C006B8ADD /* APILog.swift */,
 			);
 			path = cd001;
 			sourceTree = "<group>";
@@ -215,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B39E6B11A076A2F00BC3077 /* ViewController.swift in Sources */,
+				0BDCC56A1A07B81C006B8ADD /* APILog.swift in Sources */,
+				0BDCC5671A07B2B9006B8ADD /* CArrayController.swift in Sources */,
 				0B39E6B41A076A2F00BC3077 /* cd001.xcdatamodeld in Sources */,
 				0BEFE2571A07803E00E779A7 /* CTableView.swift in Sources */,
 				0B39E6AF1A076A2F00BC3077 /* AppDelegate.swift in Sources */,
@@ -226,6 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B39E6C51A076A2F00BC3077 /* cd001Tests.swift in Sources */,
+				0BDCC56B1A07B81C006B8ADD /* APILog.swift in Sources */,
+				0BDCC5681A07B2B9006B8ADD /* CArrayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
