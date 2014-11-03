@@ -2,11 +2,12 @@
 //  AppDelegate.swift
 //  cd001
 //
-//  Created by arith11 on 2014/11/03.
-//  Copyright (c) 2014年 arith11. All rights reserved.
+//  Created by y.kawai on 2014/11/03.
+//  Copyright (c) 2014年 y.kawai. All rights reserved.
 //
 
 import Cocoa
+import CoreData
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -60,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if !shouldFail && (error == nil) {
             coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
             let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("cd001.storedata")
-            if coordinator!.addPersistentStoreWithType(NSXMLStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+            if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
                 coordinator = nil
             }
         }

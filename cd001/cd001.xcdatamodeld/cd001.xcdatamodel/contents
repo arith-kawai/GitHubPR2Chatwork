@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CConfig" syncable="YES">
+        <attribute name="chatWorkRoomId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatWorkToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="githubUserName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="githubUserToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="reposName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reposOwner" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CConfig" positionX="-45" positionY="-57" width="128" height="148"/>
+    </elements>
 </model>
