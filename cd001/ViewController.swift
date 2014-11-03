@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  cd001
 //
-//  Created by arith11 on 2014/11/03.
-//  Copyright (c) 2014年 arith11. All rights reserved.
+//  Created by y.kawai on 2014/11/03.
+//  Copyright (c) 2014年 y.kawai. All rights reserved.
 //
 
 import Cocoa
