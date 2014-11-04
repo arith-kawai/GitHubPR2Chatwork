@@ -6,10 +6,12 @@
         <attribute name="githubUserName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="githubUserToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="pollingInterval" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="postThresholdCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="reposName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reposOwner" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CConfig" positionX="-45" positionY="-57" width="128" height="148"/>
+        <element name="CConfig" positionX="-45" positionY="-57" width="128" height="180"/>
     </elements>
 </model>
