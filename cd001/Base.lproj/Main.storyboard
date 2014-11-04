@@ -748,7 +748,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Setting" identifier="1" id="C18-2l-nYs">
-                                        <view key="view" id="Q7G-Z4-QwO">
+                                        <view key="view" ambiguous="YES" id="Q7G-Z4-QwO">
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-Eh-cXx" userLabel="name">
@@ -888,7 +888,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Execute" identifier="2" id="gK7-m3-pHK">
-                                        <view key="view" ambiguous="YES" id="4us-Hd-qnC">
+                                        <view key="view" id="4us-Hd-qnC">
                                             <rect key="frame" x="10" y="33" width="249" height="413"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>

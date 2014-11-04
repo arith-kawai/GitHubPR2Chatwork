@@ -78,7 +78,7 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
 //            repeats: true
 //        )
         timer = NSTimer.scheduledTimerWithTimeInterval(
-            4.0,
+            10.0,
             target: self,
             selector: "requestGithubPullRequests",
             userInfo: nil,
@@ -164,7 +164,7 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
                     pullRequest["pollingCount"] = cnt
                     
                     //polling5回ごとに
-                    if cnt % 5 == 0 {
+                    if cnt % 6 == 0 {
                         postMessage2ChatworkAPI(pullRequest)
                     }
                     
@@ -197,9 +197,9 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
 
         let d = data.objectForKey("data") as NSMutableDictionary
         let dTitle = d.objectForKey("title") as String
-        let dUrl = d.objectForKey("url") as String
+        let dHtmlUrl = d.objectForKey("html_url") as String
         
-        let rawData = "body=" + "\(dTitle)\r\n\(dUrl)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let rawData = "body=" + "[info][title]\(dTitle)[/title]\(dHtmlUrl)\r\n[/info]".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         println(rawData)
         
         let request: NSMutableURLRequest = NSMutableURLRequest(
