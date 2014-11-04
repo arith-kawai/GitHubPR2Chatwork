@@ -193,12 +193,17 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
     }
     
     func postMessage2ChatworkAPI(data:NSMutableDictionary!){
+
         //see http://developer.chatwork.com/ja/endpoint_rooms.html#GET-rooms-room_id-messages-message_id
 
         let d = data.objectForKey("data") as NSMutableDictionary
         let dTitle = d.objectForKey("title") as String
         let dHtmlUrl = d.objectForKey("html_url") as String
-        
+      
+        if !Regex("準備完了").test(dTitle) {
+          return
+        }
+      
         let rawData = "body=" + "[info][title]\(dTitle)[/title]\(dHtmlUrl)\r\n[/info]".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         println(rawData)
         
@@ -242,4 +247,20 @@ class GitHubPoller : NSObject, NSURLConnectionDelegate {
         
         println(json.objectForKey("message_id"))
     }
+}
+
+class Regex {
+  let internalExpression: NSRegularExpression
+  let pattern: String
+  
+  init(_ pattern: String) {
+    self.pattern = pattern
+    var error: NSError?
+    self.internalExpression = NSRegularExpression(pattern: pattern, options: .CaseInsensitive, error: &error)!
+  }
+  
+  func test(input: String) -> Bool {
+    let matches = self.internalExpression.matchesInString(input, options: nil, range:NSMakeRange(0, countElements(input)))
+    return matches.count > 0
+  }
 }
