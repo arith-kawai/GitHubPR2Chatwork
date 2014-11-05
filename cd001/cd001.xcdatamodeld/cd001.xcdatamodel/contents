@@ -10,8 +10,16 @@
         <attribute name="postThresholdCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="reposName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reposOwner" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="postConditions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PostCondition" inverseName="cconfig" inverseEntity="PostCondition" syncable="YES"/>
+    </entity>
+    <entity name="PostCondition" syncable="YES">
+        <attribute name="object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="verb" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="cconfig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CConfig" inverseName="postConditions" inverseEntity="CConfig" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CConfig" positionX="-45" positionY="-57" width="128" height="180"/>
+        <element name="CConfig" positionX="-45" positionY="-57" width="128" height="193"/>
+        <element name="PostCondition" positionX="135" positionY="9" width="128" height="103"/>
     </elements>
 </model>
