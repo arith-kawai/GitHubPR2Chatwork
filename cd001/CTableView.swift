@@ -15,24 +15,24 @@ class CTableView : NSTableView, NSTableViewDelegate, NSTableViewDataSource {
 //        setDelegate(self)
 //        setDataSource(self)
 //    }
-//    
-////    func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
-////
-////        //fatalError("init(coder:) has not been implemented")
-//////        var result: NSTableCellView = tableView.makeViewWithIdentifier("name", owner: self) as NSTableCellView
-//////        result.textField?.stringValue = "????WWWWWWWWWW"
-//////        println(result.textField?.stringValue)
-////        
-////        return result
-////        
-////    }
+//
+//    func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
+//
+//        //fatalError("init(coder:) has not been implemented")
+//        var result: NSTableCellView = tableView.makeViewWithIdentifier("name", owner: self) as NSTableCellView
+//        result.textField?.stringValue = "????WWWWWWWWWW"
+//        println(result.textField?.stringValue)
+//      
+//        return result
+//        
+//    }
 //
 //    func tableView(tableView: NSTableView, setObjectValue object: AnyObject?, forTableColumn tableColumn: NSTableColumn?, row: Int) {
 //        if tableColumn?.identifier == "name" {
 //            println(object)
 //        }
 //    }
-//    
+  
 //    func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
 //        println(1112)
 //        let appDelegate: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate!
@@ -40,5 +40,5 @@ class CTableView : NSTableView, NSTableViewDelegate, NSTableViewDataSource {
 //    func tableView(tableView: NSTableView, shouldEditTableColumn tableColumn: NSTableColumn?, row: Int) -> Bool {
 //        return true
 //    }
-    
+  
 }
